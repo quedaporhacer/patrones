@@ -25,7 +25,21 @@ BibliotecaTest >> setUp [
 
 { #category : #tests }
 BibliotecaTest >> testExportarSocios [
-	
- biblioteca  exportarSocios.
+	self
+		assert: biblioteca exportarSocios
+		equals:
+'[
+	{
+		"nombre" : "Arya Stark",
+		"email" : "needle@stark.com",
+		"legajo" : "5234/5"
+	},
+	{
+		"nombre" : "Tyron Lannister",
+		"email" : "tyron@thelannisters.com",
+		"legajo" : "2345/2"
+	}
+]'.
+
 
 ]
