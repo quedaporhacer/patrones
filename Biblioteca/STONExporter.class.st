@@ -1,17 +1,17 @@
 Class {
-	#name : #JSONExporter,
+	#name : #STONExporter,
 	#superclass : #Object,
 	#category : #Biblioteca
 }
 
 { #category : #exporting }
-JSONExporter >> export: socios [
-	^ NeoJSONWriter 
+STONExporter >> export: socios [
+	^ STON
 		toStringPretty: (socios collect: [ :socio | self exportSocio: socio ])
 ]
 
 { #category : #exporting }
-JSONExporter >> exportSocio: aSocio [
+STONExporter >> exportSocio: aSocio [
 	^ Dictionary new
 		at: #legajo put: aSocio legajo;
 		at: #email put: aSocio email;
