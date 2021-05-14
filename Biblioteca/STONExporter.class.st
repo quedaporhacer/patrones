@@ -6,8 +6,8 @@ Class {
 
 { #category : #exporting }
 STONExporter >> export: socios [
-	^ STON
-		toStringPretty: (socios collect: [ :socio | self exportSocio: socio ])
+	^ STONJSON
+		toStringPretty: (socios collect: [ :socio | self exportSocio: socio ]) asArray   
 ]
 
 { #category : #exporting }

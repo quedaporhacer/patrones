@@ -10,8 +10,9 @@ Class {
 { #category : #running }
 BibliotecaTest >> setUp [
 	|  arya tyron |
-	biblioteca := Biblioteca new: JSONExporter    new.
-	"biblioteca := Biblioteca new: VoorheesExporter   new."
+	biblioteca := Biblioteca new: JSONExporter new.
+	"biblioteca := Biblioteca new: VoorheesExporter new."
+	"biblioteca := Biblioteca new: STONExporter  new."
 	arya := Socio
 		nombre: 'Arya Stark'
 		email: 'needle@stark.com'
