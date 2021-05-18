@@ -22,12 +22,6 @@ Mixta >> ajuste: aFloat [
 ]
 
 { #category : #'as yet unclassified' }
-Mixta >> calculate [
-	^ ((topografías sumNumbers: [ :topografía | topografía calculate ])
-		/ 4) 
-]
-
-{ #category : #'as yet unclassified' }
 Mixta >> desperdicio [
 	^ self ajuste: ((topografías sumNumbers: [ :topografía | topografía desperdicio ])
 		/ 4) 
@@ -35,9 +29,9 @@ Mixta >> desperdicio [
 
 { #category : #comparing }
 Mixta >> equals: aTopography [
-	"aTopography class = self class 
-		ifFalse: [ ^ false ]."
-	aTopography isPorcion
+	
+	aTopography porcionDeAgua ~= self porcionDeAgua 
+	"aTopography isPorcion"
 		ifTrue: [ ^ false ].
 	^ (topografías first equals: aTopography topografias first)
 		and: [ (topografías second equals: aTopography topografias second)
@@ -54,6 +48,17 @@ Mixta >> initializeFirst: aFirtTopography withSecond: aSecondTopography withThir
 { #category : #testing }
 Mixta >> isPorcion [
 	^false
+]
+
+{ #category : #'as yet unclassified' }
+Mixta >> porcionDeAgua [
+	^ ((topografías sumNumbers: [ :topografía | topografía porcionDeAgua ])
+		/ 4) 
+]
+
+{ #category : #'as yet unclassified' }
+Mixta >> porcionDeTierra [
+	^ 1 - self porcionDeAgua 
 ]
 
 { #category : #'as yet unclassified' }

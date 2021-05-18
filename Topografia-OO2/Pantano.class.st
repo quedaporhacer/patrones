@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Pantano >> calculate [ 	
+Pantano >> porcionDeAgua [ 	
 	^0.7
 ]
 

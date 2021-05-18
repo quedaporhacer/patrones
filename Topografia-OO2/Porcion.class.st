@@ -6,12 +6,7 @@ Class {
 
 { #category : #comparing }
 Porcion >> equals: aTopography [
-	"aTopography isPorcion
-		ifFalse: [ ^ false ].
-		^ self calculate = aTopography calculate
-		"
- 
-	^ self class = aTopography class
+	^ self porcionDeAgua = aTopography porcionDeAgua
 ]
 
 { #category : #testing }

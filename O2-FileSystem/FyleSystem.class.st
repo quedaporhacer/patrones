@@ -3,8 +3,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'nombre',
-		'creacion',
-		'padre'
+		'creacion'
 	],
 	#category : #'O2-FileSystem'
 }

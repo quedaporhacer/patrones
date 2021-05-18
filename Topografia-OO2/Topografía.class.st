@@ -5,11 +5,6 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Topografía >> calculate [
-	self subclassResponsibility 
-]
-
-{ #category : #'as yet unclassified' }
 Topografía >> desperdicio [
 	self subclassResponsibility 
 ]
@@ -22,6 +17,11 @@ Topografía >> equals: aTopography [
 
 { #category : #testing }
 Topografía >> isPorcion [
+	self subclassResponsibility 
+]
+
+{ #category : #'as yet unclassified' }
+Topografía >> porcionDeAgua [
 	self subclassResponsibility 
 ]
 

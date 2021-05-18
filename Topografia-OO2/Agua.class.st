@@ -5,13 +5,13 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Agua >> calculate [
-	^1
+Agua >> desperdicio [
+	^ 0.15
 ]
 
 { #category : #'as yet unclassified' }
-Agua >> desperdicio [
-	^ 0.15
+Agua >> porcionDeAgua [
+	^1
 ]
 
 { #category : #'as yet unclassified' }

@@ -5,13 +5,13 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Tierra >> calculate [
-	^ 0
+Tierra >> desperdicio [
+	^0.05
 ]
 
 { #category : #'as yet unclassified' }
-Tierra >> desperdicio [
-	^0.05
+Tierra >> porcionDeAgua [
+	^ 0
 ]
 
 { #category : #'as yet unclassified' }

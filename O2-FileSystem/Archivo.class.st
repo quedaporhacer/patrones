@@ -14,6 +14,11 @@ Archivo class >> llamado: unString creadoEl: unaFecha kBytes: unNumero [
 ]
 
 { #category : #'as yet unclassified' }
+Archivo >> esDirectorio [
+	^false
+]
+
+{ #category : #'as yet unclassified' }
 Archivo >> intializellamado: unString
 		creadoEl: unaFecha
 		kBytes: unNumero [
