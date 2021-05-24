@@ -6,4 +6,6 @@ Class {
 
 { #category : #'as yet unclassified' }
 Conexión >> enviar: aMessage [
+	^aMessage 
+	
 ]

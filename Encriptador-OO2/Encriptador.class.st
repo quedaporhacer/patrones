@@ -5,5 +5,5 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-Encriptador >> encritar: unString [
+Encriptador >> encriptar: unString [
 ]

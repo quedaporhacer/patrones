@@ -7,11 +7,14 @@ Class {
 	#category : #'Encriptador-OO2'
 }
 
-{ #category : #'as yet unclassified' }
-ConexiónSegura >> encriptador [
-	^encriptador 
+{ #category : #accessing }
+ConexiónSegura >> encriptador: aMessage [
+	^encriptador encriptar: aMessage 
 ]
 
 { #category : #'as yet unclassified' }
 ConexiónSegura >> enviar: aMessage [
+	|mensajeEncriptado|
+	mensajeEncriptado := self encriptador: aMessage.
+	super enviar: mensajeEncriptado.
 ]

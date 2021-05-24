@@ -9,5 +9,6 @@ Class {
 
 { #category : #'as yet unclassified' }
 Mensajero >> enviar: aMessage [
-
+	^conexión enviar: aMessage 
+	
 ]
