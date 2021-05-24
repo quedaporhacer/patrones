@@ -2,7 +2,10 @@ Class {
 	#name : #Directorio,
 	#superclass : #FyleSystem,
 	#instVars : [
-		'fylesistems'
+		'filesistems'
+	],
+	#classInstVars : [
+		'peso'
 	],
 	#category : #'O2-FileSystem'
 }
@@ -14,17 +17,29 @@ Directorio class >> llamado: unString creadoEl: unaFecha [
 
 { #category : #'as yet unclassified' }
 Directorio >> agregar: unFileSistem [
-	fylesistems add: unFileSistem 
+	filesistems add: unFileSistem 
+]
+
+{ #category : #'as yet unclassified' }
+Directorio >> archivoMasGrande [
+	^ (filesistems collect: [ :file | file archivoMasGrande ])
+		detectMax: [ :file | file tamanoTotalOcupado ]
+]
+
+{ #category : #'as yet unclassified' }
+Directorio >> archivoMasNuevo [
+	^ (filesistems  collect: [ :dir | dir archivoMasGrande ])
+		detectMax: [ :dir | dir creacion ]
 ]
 
 { #category : #'as yet unclassified' }
 Directorio >> archivos [
-	^ fylesistems select: [ :file | file class ~= self class  ]
+	^ filesistems reject: [ :file | file esDirectorio  ]
 ]
 
 { #category : #'as yet unclassified' }
 Directorio >> directorios [
-	^ fylesistems select: [ :dir | dir esDirectorio  ]
+	^ filesistems select: [ :dir | dir esDirectorio  ]
 ]
 
 { #category : #'as yet unclassified' }
@@ -34,30 +49,33 @@ Directorio >> esDirectorio [
 
 { #category : #'as yet unclassified' }
 Directorio >> intializellamado: unString creadoEl: unaFecha [
-fylesistems := OrderedCollection new.
+filesistems := OrderedCollection new.
 	nombre := unString.
 	creacion := unaFecha
 ]
 
 { #category : #'as yet unclassified' }
 Directorio >> listadoDeContenido [
+	^self listadoDeContenido: ''
+]
+
+{ #category : #'as yet unclassified' }
+Directorio >> listadoDeContenido: parentPath [
 	| res |
 	res := WriteStream on: String new.
-	res << ('/' , nombre).
+	res << (parentPath , '/' , nombre).
 	self archivos
-		ifNotEmpty: [ res
-				<< (' (' , self archivos size asString , ' archivos)');
-				cr ].
-			
+		ifNotEmpty: [ res << (' (' , self archivos size asString , ' archivos)') ].
 	self directorios
 		do: [ :direct | 
 			res
-				<< ('/' , nombre , direct listadoDeContenido contents);
-				cr ].
-	^ res
+				<< '';
+				cr.
+			res << (direct listadoDeContenido: parentPath , '/' , nombre) ].
+	^ res contents 
 ]
 
 { #category : #'as yet unclassified' }
 Directorio >> tamanoTotalOcupado [
-	^fylesistems sumNumbers: [:fylesistem | fylesistem tamanoTotalOcupado ] + 32
+	^filesistems sumNumbers: [:fylesistem | fylesistem tamanoTotalOcupado ] + 32
 ]

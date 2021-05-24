@@ -14,6 +14,16 @@ Archivo class >> llamado: unString creadoEl: unaFecha kBytes: unNumero [
 ]
 
 { #category : #'as yet unclassified' }
+Archivo >> archivoMasGrande [
+	 ^self
+]
+
+{ #category : #accessing }
+Archivo >> creacion [
+	^ creacion 
+]
+
+{ #category : #'as yet unclassified' }
 Archivo >> esDirectorio [
 	^false
 ]
