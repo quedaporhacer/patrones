@@ -6,4 +6,5 @@ Class {
 
 { #category : #'as yet unclassified' }
 Encriptador >> encriptar: unString [
+	self subclassResponsibility 
 ]

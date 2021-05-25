@@ -8,13 +8,19 @@ Class {
 }
 
 { #category : #accessing }
-ConexiónSegura >> encriptador: aMessage [
-	^encriptador encriptar: aMessage 
+ConexiónSegura >> encriptador [
+	^ encriptador 
+]
+
+{ #category : #accessing }
+ConexiónSegura >> encriptador: unENcriptador [
+	encriptador:= unENcriptador
 ]
 
 { #category : #'as yet unclassified' }
 ConexiónSegura >> enviar: aMessage [
-	|mensajeEncriptado|
-	mensajeEncriptado := self encriptador: aMessage.
-	super enviar: mensajeEncriptado.
+	"| mensajeEncriptado |
+	mensajeEncriptado := self encriptador encriptar: aMessage.
+	^ super enviar: mensajeEncriptado"
+	^ super enviar: (encriptador  encriptar: aMessage).
 ]
