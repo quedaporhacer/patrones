@@ -1,6 +1,6 @@
 Class {
 	#name : #RSA,
-	#superclass : #Encriptador,
+	#superclass : #'EstrategiaDeEncriptación',
 	#category : #'Encriptador-OO2'
 }
 
