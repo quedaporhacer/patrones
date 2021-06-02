@@ -1,7 +1,7 @@
 Class {
 	#name : #'Conexión',
 	#superclass : #Object,
-	#category : #'Encriptador-OO2'
+	#category : #'Encriptador-OO2-model'
 }
 
 { #category : #'as yet unclassified' }

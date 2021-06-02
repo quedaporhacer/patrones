@@ -4,8 +4,13 @@ Class {
 	#instVars : [
 		'encriptador'
 	],
-	#category : #'Encriptador-OO2'
+	#category : #'Encriptador-OO2-model'
 }
+
+{ #category : #'instance creation' }
+ConexiónSegura class >> new: unEncriptador [ 
+	^self new initialize: unEncriptador 
+]
 
 { #category : #accessing }
 ConexiónSegura >> encriptador [
@@ -23,4 +28,10 @@ ConexiónSegura >> enviar: aMessage [
 	mensajeEncriptado := self encriptador encriptar: aMessage.
 	^ super enviar: mensajeEncriptado"
 	^ super enviar: (encriptador  encriptar: aMessage).
+]
+
+{ #category : #initialization }
+ConexiónSegura >> initialize: unEncriptador [ 
+	encriptador:= unEncriptador 
+	 
 ]
