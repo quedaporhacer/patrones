@@ -13,8 +13,8 @@ ConexiónSegura >> encriptador [
 ]
 
 { #category : #accessing }
-ConexiónSegura >> encriptador: unENcriptador [
-	encriptador:= unENcriptador
+ConexiónSegura >> encriptador: unEncriptador [
+	encriptador := unEncriptador
 ]
 
 { #category : #'as yet unclassified' }

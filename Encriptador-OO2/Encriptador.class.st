@@ -1,23 +1,21 @@
 Class {
 	#name : #Encriptador,
 	#superclass : #Object,
-	#instVars : [
-		'strategy'
-	],
 	#category : #'Encriptador-OO2'
 }
 
 { #category : #'as yet unclassified' }
-Encriptador >> encriptar: aMessage [ 
-	^strategy encriptar: aMessage 
+Encriptador >> encriptar: unString [
+	self subclassResponsibility 
 ]
 
-{ #category : #accessing }
-Encriptador >> strategy [
-	^ strategy
-]
-
-{ #category : #accessing }
-Encriptador >> strategy: anObject [
-	strategy := anObject
+{ #category : #'as yet unclassified' }
+Encriptador >> encriptar: aMessage aStrategy: anStrategy [
+"Este metodo representa la implemtacion de lo solicitado sin utilizar el patron de diseño"
+	anStrategy == 'RSA'
+		ifTrue: [ ^ 'RSA ' , aMessage ].
+	anStrategy == 'RC4'
+		ifTrue: [ ^ 'RC4' , aMessage ].
+	anStrategy == 'Blowfish'
+		ifTrue: [ ^ 'Blowfish ' , aMessage ]
 ]

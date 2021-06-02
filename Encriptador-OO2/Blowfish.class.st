@@ -1,10 +1,10 @@
 Class {
 	#name : #Blowfish,
-	#superclass : #'EstrategiaDeEncriptación',
+	#superclass : #Encriptador,
 	#category : #'Encriptador-OO2'
 }
 
 { #category : #'as yet unclassified' }
 Blowfish >> encriptar: unString [
-	^ ('blowfish' , unString)
+	^ 'blowfish ' , unString
 ]
